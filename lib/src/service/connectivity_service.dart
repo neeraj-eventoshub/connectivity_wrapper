@@ -22,7 +22,27 @@ class ConnectivityService {
     ),
   ]);
 
-  List<AddressCheckOptions> addresses = defaultAddresses;
+  //IPv6 Addresseses
+  static final List<AddressCheckOptions> defaultIPv6Addresses = List.unmodifiable([
+    AddressCheckOptions(
+      InternetAddress('0:0:0:0:0:ffff:101:101'),
+      port: DEFAULT_PORT,
+      timeout: DEFAULT_TIMEOUT,
+    ),
+    AddressCheckOptions(
+      InternetAddress('0:0:0:0:0:ffff:808:404'),
+      port: DEFAULT_PORT,
+      timeout: DEFAULT_TIMEOUT,
+    ),
+    AddressCheckOptions(
+      InternetAddress('0:0:0:0:0:ffff:d043:dede'),
+      port: DEFAULT_PORT,
+      timeout: DEFAULT_TIMEOUT,
+    ),
+  ]);
+
+  //List<AddressCheckOptions> addresses = defaultAddresses;
+  List<AddressCheckOptions> addresses = defaultIPv6Addresses;
 
   factory ConnectivityService() => _instance;
 
